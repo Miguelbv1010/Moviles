@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Actividad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .caja {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #cccccc;
+        }
+        .caja p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript</h1>
+
+    <div class="caja" id="caja1">
+        <button onclick="cambiarColorFondo()">Cambiar color de fondo</button>
+    </div>
+
+    <div class="caja">
+        <p id="texto1">Texto 1</p>
+        <p id="texto2">Texto 2</p>
+        <p id="texto3">Texto 3</p>
+        <button onclick="cambiarTextos()">Cambiar textos</button>
+    </div>
+
+    <div class="caja">
+        <label for="numero">Ingresa un número:</label>
+        <input type="number" id="numero" onchange="verificarNumero()">
+    </div>
+
+    <div class="caja">
+        <button onclick="crearObjeto()">Crear objeto</button>
+        <p id="objeto"></p>
+    </div>
+
+    <div class="caja">
+        <button onclick="mostrarNombres()">Mostrar nombres</button>
+        <ul id="listaNombres"></ul>
+    </div>
+
+    <script>
+        
+        function cambiarColorFondo() {
+            document.body.style.backgroundColor = "lightblue";
+        }
+
+    
+        function cambiarTextos() {
+            document.getElementById("texto1").innerText = "NUEVO";
+            document.getElementById("texto2").innerText = "NUEVO1";
+            document.getElementById("texto3").innerText = "NUEVO2";
+        }
+
+        
+        function verificarNumero() {
+            const numero = document.getElementById("numero").value;
+            if (numero > 10) {
+                alert("El número es mayor a 10");
+            }
+        }
+
+        
+        function crearObjeto() {
+            const persona = {
+                nombre: "Miguel Barragan",
+                edad: 21,
+                correo: "miguelbv880@gmail.com"
+            };
+            document.getElementById("objeto").innerText = 
+                `Nombre: ${persona.nombre}, Edad: ${persona.edad}, Correo: ${persona.correo}`;
+        }
+
+
+
+    </script>
+
+</body>
+</html>
